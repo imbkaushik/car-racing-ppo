@@ -108,11 +108,6 @@ alpha, beta = net(state[index])[0]  # 0th return parameter
 dist = Beta(alpha, beta)
 ```
 
-**Reference Papers:**
-
-* [Chou et al., 2017 – Improving Stochastic Policy Gradients in Continuous Control using the Beta Distribution](http://proceedings.mlr.press/v70/chou17a.html)
-* [Fujita & Maeda, 2018 – Clipped Action Policy Gradient](https://arxiv.org/abs/1802.07564)
-
 ---
 
 ## PPO Update Mechanism
@@ -290,6 +285,11 @@ Replay (5 episodes):
 
 ---
 
+## **Video:** [Watch the Training Demo](video/CarRacing by Training Stages.mp4)
+
+
+---
+
 ## Summary
 
 - Implemented PPO with CNN and Beta-distribution policy    
@@ -308,5 +308,5 @@ Replay (5 episodes):
 
 * Yasuhiro Fujita, Shin-ichi Maeda (2018).
   *Clipped Action Policy Gradient.*
-  [arXiv:1802.07564](https://arxiv.org/abs/1802.07564)
+  [Link](https://arxiv.org/abs/1802.07564)
 
