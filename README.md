@@ -29,8 +29,12 @@ To **solve** the environment, the agent must achieve an **average reward ≥ 900
 
 ## Requirements
 
-* [PyTorch 0.41](https://pytorch.org/)
-* [OpenAI Gym 0.10](https://github.com/openai/gym)
+python==3.6  
+numpy>=1.14  
+gym==0.10.5  
+torch==0.4.1  
+torchvision==0.2.1  
+matplotlib>=2.2  
 
 ---
 
