@@ -1,6 +1,6 @@
 # PixelDrive: PPO Agent for Visual Car Racing
 
-### 🚀 Introduction
+### Introduction
 
 This project demonstrates a **continuous control task** in reinforcement learning, where an agent learns to control a car from **raw pixel inputs** using **Proximal Policy Optimization (PPO)**.
 
@@ -27,14 +27,14 @@ To **solve** the environment, the agent must achieve an **average reward ≥ 900
 
 ---
 
-## 🧩 Requirements
+## Requirements
 
 * [PyTorch 0.41](https://pytorch.org/)
 * [OpenAI Gym 0.10](https://github.com/openai/gym)
 
 ---
 
-## 🧠 Environment Setup
+## Environment Setup
 
 The environment used for this project is provided by the **OpenAI Gym** package.
 It can be instantiated as:
@@ -46,7 +46,7 @@ env = gym.make('CarRacing-v0', verbose=0)
 
 ---
 
-## ⚙️ Hyperparameters
+## Hyperparameters
 
 The PPO agent is trained with the following hyperparameters:
 
@@ -69,7 +69,7 @@ action_loss = -torch.min(surr1, surr2)
 
 ---
 
-## 🧮 Neural Network Architecture
+## Neural Network Architecture
 
 The policy and value networks are **CNN-based** models consisting of:
 
@@ -90,7 +90,7 @@ advantage = target - net(state)[1]  # 1st return parameter from forward()
 
 ---
 
-## 🎲 Action Sampling — Beta Distribution
+## Action Sampling — Beta Distribution
 
 The agent’s policy outputs the parameters of a **Beta distribution**,
 which models bounded continuous actions (a better alternative to Gaussian for `[0,1]` intervals).
@@ -107,7 +107,7 @@ dist = Beta(alpha, beta)
 
 ---
 
-## 🔁 PPO Update Mechanism
+## PPO Update Mechanism
 
 In standard policy gradients, a **single gradient update** is performed per data sample.
 However, PPO introduces a **surrogate objective** that enables **multiple epochs** of updates per batch of collected data.
@@ -125,7 +125,7 @@ Key hyperparameters in this process include:
 
 ---
 
-## 🏁 Training the Agent
+## Training the Agent
 
 The agent learns to leverage **visual information** from surrounding frames to determine the **next optimal action**.
 
@@ -138,7 +138,7 @@ After training for approximately **6 hours and 53 minutes**, the agent achieved:
   <img src="images/plot_2760episodes.png" width="600">
 </p>
 
-### 🧾 Last Recorded Episodes
+### Last Recorded Episodes
 
 | Episode | Timesteps | Score   | Avg. Score | Run Score | Time     |
 | ------- | --------- | ------- | ---------- | --------- | -------- |
@@ -153,15 +153,15 @@ After training for approximately **6 hours and 53 minutes**, the agent achieved:
 | 2758    | 100       | 989.55  | 895.27     | 893.06    | 06:52:49 |
 | 2759    | 100       | 986.25  | 901.81     | 893.99    | 06:52:59 |
 
-✅ *Environment solved!*
+*Environment solved!*
 **Running score:** 893.99
 **Average score:** 901.81
 
 ---
 
-## 🖼️ Learning from Raw Pixels
+## Learning from Raw Pixels
 
-### 1️⃣ Moving Image to Dark Green
+### 1 Moving Image to Dark Green
 
 In RGB space, the **Dark Green vector** is represented as `[0.299, 0.587, 0.114]`.
 
@@ -181,7 +181,7 @@ Thus, the **color code** is **#4d961d** → “Dark Green”.
 
 ---
 
-### 2️⃣ Converting to Grayscale
+### 2 Converting to Grayscale
 
 Each pixel ( z = (a,b,c) ) is projected onto vector ( v = [0.299, 0.587, 0.114] ):
 
@@ -207,7 +207,7 @@ img_gray = rgb2gray(img_rgb)
 
 ---
 
-### 3️⃣ Stacking Frames for Temporal Context
+### 3 Stacking Frames for Temporal Context
 
 To capture temporal information, **4 consecutive grayscale frames** are stacked to form a single **state** with shape `(4, 96, 96)`.
 
@@ -228,14 +228,14 @@ This process ensures the model receives **spatial + temporal** input from recent
 
 ---
 
-## 🎥 Watching the Trained Agent
+## Watching the Trained Agent
 
 Trained model weights are stored in the directory **`dir_chk/`**.
 You can replay trajectories using the **`WatchAgent`** notebook.
 
 ---
 
-### 🎮 Evaluation Results
+### Evaluation Results
 
 #### I. `model_weights_350-550.pth`
 
@@ -282,16 +282,16 @@ Replay (5 episodes):
 
 ---
 
-## 🧩 Summary
+## Summary
 
-✅ Implemented PPO with CNN and Beta-distribution policy
-✅ Trained directly from **raw pixels** using stacked frames
-✅ Solved environment with **>900 average reward**
-✅ Achieved stable and efficient learning over multiple epochs
+- Implemented PPO with CNN and Beta-distribution policy    
+- Trained directly from **raw pixels** using stacked frames  
+- Solved environment with **>900 average reward**  
+- Achieved stable and efficient learning over multiple epochs  
 
 ---
 
-## 📚 References
+## References
 
 * Po-Wei Chou, Daniel Maturana, Sebastian Scherer (2017).
   *Improving Stochastic Policy Gradients in Continuous Control with Deep Reinforcement Learning using the Beta Distribution.*
