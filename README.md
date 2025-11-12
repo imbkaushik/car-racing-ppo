@@ -71,6 +71,10 @@ action_loss = -torch.min(surr1, surr2)
 
 ## Neural Network Architecture
 
+<p align="center">
+  <img src="images/network.png" width="500">
+</p>
+
 The policy and value networks are **CNN-based** models consisting of:
 
 * **6 convolutional layers (`Conv2d`)**
@@ -161,7 +165,7 @@ After training for approximately **6 hours and 53 minutes**, the agent achieved:
 
 ## Learning from Raw Pixels
 
-### 1 Moving Image to Dark Green
+### 1. Moving Image to Dark Green
 
 In RGB space, the **Dark Green vector** is represented as `[0.299, 0.587, 0.114]`.
 
@@ -181,7 +185,7 @@ Thus, the **color code** is **#4d961d** → “Dark Green”.
 
 ---
 
-### 2 Converting to Grayscale
+### 2. Converting to Grayscale
 
 Each pixel ( z = (a,b,c) ) is projected onto vector ( v = [0.299, 0.587, 0.114] ):
 
@@ -207,7 +211,7 @@ img_gray = rgb2gray(img_rgb)
 
 ---
 
-### 3 Stacking Frames for Temporal Context
+### 3. Stacking Frames for Temporal Context
 
 To capture temporal information, **4 consecutive grayscale frames** are stacked to form a single **state** with shape `(4, 96, 96)`.
 
