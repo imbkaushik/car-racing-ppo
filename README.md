@@ -285,8 +285,11 @@ Replay (5 episodes):
 
 ---
 
-## **Video:** [Watch the Training Demo](video/CarRacing by Training Stages.mp4)
+## Video
 
+<p align="center">
+  <video src="video/CarRacing by Training Stages.mp4" controls width="600"></video>
+</p>
 
 ---
 
