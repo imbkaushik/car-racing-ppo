@@ -287,9 +287,9 @@ Replay (5 episodes):
 
 ## Video
 
-<p align="center">
-  <video src="video/CarRacing by Training Stages.mp4" controls width="600"></video>
-</p>
+🎥 **Watch the trained PPO agent in action:**  
+[▶ View Demo on Google Drive](https://drive.google.com/file/d/1MskmBiMlt4ZV8GtVa-FDOgLUpUDQfU12/view?usp=drive_link)
+
 
 ---
 
