@@ -72,7 +72,7 @@ action_loss = -torch.min(surr1, surr2)
 ## Neural Network Architecture
 
 <p align="center">
-  <img src="images/network.png" width="500">
+  <img src="images/network.png" width="500" height="300">
 </p>
 
 The policy and value networks are **CNN-based** models consisting of:
